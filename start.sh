@@ -19,7 +19,7 @@ echo "Running Docker container..."
 sudo docker run -it --gpus all \
 -v $MODELS_DIR:/models \
 --security-opt=label=disable -p $HOST_PORT:$HOST_PORT $LLAMACPP_IMAGE \
--m /models/$GGUF_FILE \
+-m /models/$GGUF_FILE --n-gpu-layers 46 \
 --metrics \
 --port $LLAMACPP_PORT --host $LLAMACPP_HOST 
 
